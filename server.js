@@ -43,7 +43,7 @@ wss.on('connection', (ws) => {
       data.timestamp = new Date().toISOString();
       
       // Encaminhar a mensagem para todos os clientes
-      broadcastMessage(data);
+      broadcastMessage(data, ws);
     } catch (error) {
       console.error('Erro ao processar mensagem:', error);
     }
